@@ -1,7 +1,7 @@
 ---
 layout: site
 title: Resume
-description: Experience, projects, and education of Pranav Kulkarni, an ML systems engineer at AWS Annapurna ML.
+description: Experience, projects, and education of Pranav Kulkarni, a Software Development Engineer at Annapurna Labs.
 permalink: /resume/
 redirect_from:
   - /cv/
@@ -9,14 +9,15 @@ redirect_from:
 {% assign profile = site.data.profile %}
 <article class="resume-page">
   <header class="resume-header">
-    <p class="eyebrow">Resume</p>
+    <p class="resume-meta">Résumé</p>
     <h1>{{ profile.full_name | escape }}</h1>
-    <p class="resume-meta">{{ profile.role | escape }} · {{ profile.location | escape }}</p>
-    <p>{{ profile.intro | escape }}</p>
+    <p class="resume-meta">{{ profile.role | escape }} · {{ profile.experience.first.company | escape }} · {{ profile.location | escape }}</p>
+    <p>{{ profile.about.first | escape }}</p>
     <div class="resume-actions">
       <a href="mailto:{{ profile.email | escape }}">{{ profile.email | escape }}</a>
       <a href="{{ profile.github_url | escape }}">GitHub</a>
       <a href="{{ profile.linkedin_url | escape }}">LinkedIn</a>
+      <a href="{{ profile.scholar_url | escape }}">Google Scholar</a>
       <button type="button" class="button button-outline" data-print-resume hidden>Print / save PDF</button>
     </div>
   </header>
@@ -62,7 +63,7 @@ redirect_from:
   </section>
 
   <section class="resume-section" aria-labelledby="focus-title">
-    <h2 id="focus-title">Areas of focus</h2>
+    <h2 id="focus-title">Research and engineering interests</h2>
     <ul class="resume-skills">
       {% for area in profile.focus %}
       <li><strong>{{ area.title | escape }}.</strong> {{ area.description | escape }}</li>

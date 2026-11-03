@@ -1,83 +1,71 @@
 name: Pranav Kulkarni
 full_name: Pranav Sarvesh Kulkarni
-role: ML systems engineer
+role: Software Development Engineer
 location: Seattle, WA
 email: pranavgradapps@gmail.com
 github_url: https://github.com/MadElf1337
 linkedin_url: https://www.linkedin.com/in/pranavkulkarni1337/
-headline: Making models work. Making systems faster.
+scholar_url: https://scholar.google.com/citations?user=1r9ZUtoAAAAJ&hl=en
 intro: >-
-  I build inference and rollout infrastructure for post-training at AWS
-  Annapurna ML. My work spans accelerator kernels, compilers, and the systems
-  that connect them.
+  I am a Software Development Engineer at Annapurna Labs, based in Seattle.
 about:
   - >-
-    My work sits where models meet hardware. At AWS Annapurna ML, I build
-    inference and rollout infrastructure that supports post-training and
-    reinforcement-learning workflows on AWS accelerators.
+    I work on inference systems and rollout infrastructure for post-training
+    and reinforcement learning on AWS accelerators. My work also includes
+    kernel optimization and compiler support.
   - >-
-    Before that, I built agent workflows at Amazon and worked on graph-based
-    retrieval and language-model serving at pSemi. Outside work, I explore
-    GPU programming, JAX, and numerical optimization through hands-on projects.
+    I received my MS in Computer Science from the University of Southern
+    California in 2025. Previously, I worked on agent-based workflows at
+    Amazon and graph-based retrieval and language-model serving at pSemi.
 focus:
-  - title: Inference & post-training
+  - title: Efficient inference
     description: >-
-      Building inference and rollout systems that enable post-training,
-      with attention to performance, correctness, and reliability.
-  - title: Kernels & compilers
+      Inference performance and correctness on machine learning accelerators.
+  - title: Post-training infrastructure
     description: >-
-      Working close to the hardware with quantization, custom kernels,
-      and compiler support for machine learning workloads.
-  - title: Applied machine learning
+      Inference and rollout systems for reinforcement learning.
+  - title: Kernels and compilers
     description: >-
-      Connecting models to useful workflows through retrieval, fine-tuning,
-      distributed serving, and agent systems.
+      Accelerator programming, quantization, and compiler support for
+      machine learning workloads.
 projects:
   - title: Kernels
-    eyebrow: GPU & TPU programming
     description: >-
-      A collection of accelerator programming experiments: attention,
-      normalization, and softmax in Triton; matrix multiplication,
-      convolution, and other operations in CUDA.
+      Accelerator programming experiments, including attention,
+      normalization, and softmax in Triton, and matrix multiplication
+      and convolution in CUDA.
     stack:
       - CUDA
       - Triton
       - Pallas
     url: https://github.com/MadElf1337/kernels
-    featured: true
   - title: GPT-2 in JAX
-    eyebrow: Models & compilation
     description: >-
-      A JAX implementation of GPT-2 with weight conversion from PyTorch,
-      exploring XLA compilation and inference on TPUs.
+      A JAX implementation of GPT-2 with weight conversion from PyTorch
+      and XLA-compiled inference on TPUs.
     stack:
       - JAX
       - Python
       - XLA
     url: https://github.com/MadElf1337/jax-gpt2
-    featured: false
   - title: Cohort Intelligence Optimizer
-    eyebrow: Numerical optimization
     description: >-
       A Python implementation of the Cohort Intelligence optimization
-      algorithm, adapted from MATLAB and accelerated with vectorized
-      NumPy operations.
+      algorithm, adapted from MATLAB using vectorized NumPy operations.
     stack:
       - Python
       - NumPy
       - MATLAB
     url: https://github.com/MadElf1337/CI-Optimizer
-    featured: false
 experience:
   - role: Software Development Engineer, Performance
-    company: AWS Annapurna ML
+    company: Annapurna Labs
     period: Nov 2025 – present
     summary: >-
-      Build inference and rollout infrastructure on AWS accelerators to
-      support post-training and reinforcement-learning workflows. Work
-      also spans FP8 KV-cache quantization, custom kernel integration,
-      compiler support for complex-valued JAX workloads, and Neuron SDK
-      release delivery.
+      Develop inference and rollout infrastructure for post-training and
+      reinforcement learning on AWS accelerators. Additional work includes
+      FP8 KV-cache quantization, custom kernel integration, compiler support
+      for complex-valued JAX workloads, and Neuron SDK release delivery.
   - role: Software Development Engineer
     company: Amazon
     period: Jun 2025 – Nov 2025

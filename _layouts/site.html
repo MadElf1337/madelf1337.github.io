@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% assign profile = site.data.profile %}
     {% assign page_description = page.description | default: site.description %}
-    <title>{% if page.title %}{{ page.title | escape }} · {% endif %}{{ profile.name | escape }}</title>
+    <title>{% if page.title %}{{ page.title | escape }} | {% endif %}{{ profile.name | escape }}</title>
     <meta name="description" content="{{ page_description | escape }}">
-    <meta name="theme-color" content="#f5f2eb">
+    <meta name="theme-color" content="#ffffff">
     <link rel="canonical" href="{{ page.url | absolute_url }}">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{% if page.title %}{{ page.title | escape }} · {% endif %}{{ profile.name | escape }}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title | escape }} | {% endif %}{{ profile.name | escape }}">
     <meta property="og:description" content="{{ page_description | escape }}">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
     <meta property="og:site_name" content="{{ profile.name | escape }}">
@@ -19,42 +19,25 @@
     <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
     <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
   </head>
-  <body{% if page.permalink == '/resume/' %} class="resume-view"{% endif %}>
+  <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header shell">
-      <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="{{ profile.name | escape }}, home">
-        <span class="monogram" aria-hidden="true">pk<span>.</span></span>
-        <span class="wordmark-name">{{ profile.name }}</span>
-      </a>
-      <nav aria-label="Main navigation">
-        <a href="{{ '/#work' | relative_url }}">Work</a>
-        <a href="{{ '/#experience' | relative_url }}">Experience</a>
-        <a href="{{ '/#about' | relative_url }}">About</a>
-        <a class="nav-resume" href="{{ '/resume/' | relative_url }}"{% if page.permalink == '/resume/' %} aria-current="page"{% endif %}>Résumé <span aria-hidden="true">↗</span></a>
-      </nav>
-    </header>
-    <main id="main" tabindex="-1">
-      {{ content }}
-    </main>
-    <footer class="site-footer" id="contact">
-      <div class="shell">
-        <div class="contact-heading">
-          <div>
-            <p class="eyebrow">Keep in touch</p>
-            <h2>Good systems start<br>with a conversation.</h2>
-          </div>
-          <a class="contact-link" href="mailto:{{ profile.email }}">Say hello <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="footer-bottom">
-          <p>{{ profile.name }} <span aria-hidden="true">/</span> {{ profile.location }}</p>
-          <div class="social-links" aria-label="Social links">
-            <a href="{{ profile.github_url }}">GitHub <span aria-hidden="true">↗</span></a>
-            <a href="{{ profile.linkedin_url }}">LinkedIn <span aria-hidden="true">↗</span></a>
-            <a href="mailto:{{ profile.email }}">Email <span aria-hidden="true">↗</span></a>
-          </div>
-          <p class="colophon">Built with care &amp; Jekyll.</p>
-        </div>
-      </div>
-    </footer>
+    <div class="page">
+      <header class="site-header">
+        {% if page.url == '/' %}
+        <h1 class="site-name">{{ profile.name | escape }}</h1>
+        {% else %}
+        <a class="site-name" href="{{ '/' | relative_url }}">{{ profile.name | escape }}</a>
+        {% endif %}
+        <nav aria-label="Main navigation">
+          <a href="{{ '/#about' | relative_url }}">About</a>
+          {% if site.data.papers and site.data.papers.size > 0 %}<a href="{{ '/#papers' | relative_url }}">Papers</a>{% endif %}
+          <a href="{{ '/#projects' | relative_url }}">Projects</a>
+          <a href="{{ '/resume/' | relative_url }}"{% if page.permalink == '/resume/' %} aria-current="page"{% endif %}>CV</a>
+        </nav>
+      </header>
+      <main id="main" tabindex="-1">
+        {{ content }}
+      </main>
+    </div>
   </body>
 </html>
