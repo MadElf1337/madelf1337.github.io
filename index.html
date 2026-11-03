@@ -24,18 +24,6 @@ redirect_from:
   <p class="interests"><strong>Interests:</strong> {% for area in profile.focus %}{{ area.title | escape }}{% unless forloop.last %}; {% endunless %}{% endfor %}.</p>
 </section>
 
-<section id="papers" aria-labelledby="papers-title">
-  <h2 id="papers-title">Papers</h2>
-  {% assign papers = site.data.papers | sort: "year" | reverse %}
-  {% for paper in papers %}
-  <article class="paper-entry">
-    <h3><a href="{{ paper.url | escape }}">{{ paper.title | escape }}</a></h3>
-    <p>{{ paper.authors | join: ", " | escape }}</p>
-    <p class="paper-venue">{{ paper.venue | escape }}, {{ paper.year }}</p>
-  </article>
-  {% endfor %}
-</section>
-
 <section id="experience" aria-labelledby="experience-title">
   <h2 id="experience-title">Professional experience</h2>
   {% for job in profile.experience %}
@@ -70,6 +58,18 @@ redirect_from:
     <h3><a href="{{ project.url | escape }}">{{ project.title | escape }}</a></h3>
     <p>{{ project.description | escape }}</p>
     <p class="project-technologies">{{ project.stack | join: " · " | escape }}</p>
+  </article>
+  {% endfor %}
+</section>
+
+<section id="papers" aria-labelledby="papers-title">
+  <h2 id="papers-title">Papers</h2>
+  {% assign papers = site.data.papers | sort: "year" | reverse %}
+  {% for paper in papers %}
+  <article class="paper-entry">
+    <h3><a href="{{ paper.url | escape }}">{{ paper.title | escape }}</a></h3>
+    <p>{{ paper.authors | join: ", " | escape }}</p>
+    <p class="paper-venue">{{ paper.venue | escape }}, {{ paper.year }}</p>
   </article>
   {% endfor %}
 </section>
