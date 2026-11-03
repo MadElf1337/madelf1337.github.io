@@ -30,8 +30,8 @@
         {% endif %}
         <nav aria-label="Main navigation">
           <a href="{{ '/#about' | relative_url }}">About</a>
-          {% if site.data.papers and site.data.papers.size > 0 %}<a href="{{ '/#papers' | relative_url }}">Papers</a>{% endif %}
           <a href="{{ '/#projects' | relative_url }}">Projects</a>
+          {% if site.data.papers and site.data.papers.size > 0 %}<a href="{{ '/#papers' | relative_url }}">Papers</a>{% endif %}
           <a href="{{ '/resume/' | relative_url }}"{% if page.permalink == '/resume/' %} aria-current="page"{% endif %}>CV</a>
         </nav>
       </header>
