@@ -1,0 +1,72 @@
+---
+layout: site
+title: Resume
+description: Experience, projects, and education of Pranav Kulkarni, an ML systems engineer at AWS Annapurna ML.
+permalink: /resume/
+redirect_from:
+  - /cv/
+---
+{% assign profile = site.data.profile %}
+<article class="resume-page">
+  <header class="resume-header">
+    <p class="eyebrow">Resume</p>
+    <h1>{{ profile.full_name | escape }}</h1>
+    <p class="resume-meta">{{ profile.role | escape }} · {{ profile.location | escape }}</p>
+    <p>{{ profile.intro | escape }}</p>
+    <div class="resume-actions">
+      <a href="mailto:{{ profile.email | escape }}">{{ profile.email | escape }}</a>
+      <a href="{{ profile.github_url | escape }}">GitHub</a>
+      <a href="{{ profile.linkedin_url | escape }}">LinkedIn</a>
+      <button type="button" class="button button-outline" data-print-resume hidden>Print / save PDF</button>
+    </div>
+  </header>
+
+  <section class="resume-section" aria-labelledby="experience-title">
+    <h2 id="experience-title">Experience</h2>
+    {% for position in profile.experience %}
+    <div class="resume-entry">
+      <div class="resume-entry-heading">
+        <h3>{{ position.role | escape }}</h3>
+        <p class="resume-meta">{{ position.period | escape }}</p>
+      </div>
+      <p class="resume-meta">{{ position.company | escape }}</p>
+      <p>{{ position.summary | escape }}</p>
+    </div>
+    {% endfor %}
+  </section>
+
+  <section class="resume-section" aria-labelledby="projects-title">
+    <h2 id="projects-title">Selected projects</h2>
+    {% for project in profile.projects %}
+    <div class="resume-entry">
+      <div class="resume-entry-heading">
+        <h3><a href="{{ project.url | escape }}">{{ project.title | escape }}</a></h3>
+        <p class="resume-meta">{{ project.stack | join: " · " | escape }}</p>
+      </div>
+      <p>{{ project.description | escape }}</p>
+    </div>
+    {% endfor %}
+  </section>
+
+  <section class="resume-section" aria-labelledby="education-title">
+    <h2 id="education-title">Education</h2>
+    {% for qualification in profile.education %}
+    <div class="resume-entry">
+      <div class="resume-entry-heading">
+        <h3>{{ qualification.school | escape }}</h3>
+        <p class="resume-meta">{{ qualification.period | escape }}</p>
+      </div>
+      <p>{{ qualification.degree | escape }}</p>
+    </div>
+    {% endfor %}
+  </section>
+
+  <section class="resume-section" aria-labelledby="focus-title">
+    <h2 id="focus-title">Areas of focus</h2>
+    <ul class="resume-skills">
+      {% for area in profile.focus %}
+      <li><strong>{{ area.title | escape }}.</strong> {{ area.description | escape }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+</article>

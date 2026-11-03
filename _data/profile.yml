@@ -1,0 +1,101 @@
+name: Pranav Kulkarni
+full_name: Pranav Sarvesh Kulkarni
+role: ML systems engineer
+location: Seattle, WA
+email: pranavgradapps@gmail.com
+github_url: https://github.com/MadElf1337
+linkedin_url: https://www.linkedin.com/in/pranavkulkarni1337/
+headline: Making models work. Making systems faster.
+intro: >-
+  I build inference and rollout infrastructure for post-training at AWS
+  Annapurna ML. My work spans accelerator kernels, compilers, and the systems
+  that connect them.
+about:
+  - >-
+    My work sits where models meet hardware. At AWS Annapurna ML, I build
+    inference and rollout infrastructure that supports post-training and
+    reinforcement-learning workflows on AWS accelerators.
+  - >-
+    Before that, I built agent workflows at Amazon and worked on graph-based
+    retrieval and language-model serving at pSemi. Outside work, I explore
+    GPU programming, JAX, and numerical optimization through hands-on projects.
+focus:
+  - title: Inference & post-training
+    description: >-
+      Building inference and rollout systems that enable post-training,
+      with attention to performance, correctness, and reliability.
+  - title: Kernels & compilers
+    description: >-
+      Working close to the hardware with quantization, custom kernels,
+      and compiler support for machine learning workloads.
+  - title: Applied machine learning
+    description: >-
+      Connecting models to useful workflows through retrieval, fine-tuning,
+      distributed serving, and agent systems.
+projects:
+  - title: Kernels
+    eyebrow: GPU & TPU programming
+    description: >-
+      A collection of accelerator programming experiments: attention,
+      normalization, and softmax in Triton; matrix multiplication,
+      convolution, and other operations in CUDA.
+    stack:
+      - CUDA
+      - Triton
+      - Pallas
+    url: https://github.com/MadElf1337/kernels
+    featured: true
+  - title: GPT-2 in JAX
+    eyebrow: Models & compilation
+    description: >-
+      A JAX implementation of GPT-2 with weight conversion from PyTorch,
+      exploring XLA compilation and inference on TPUs.
+    stack:
+      - JAX
+      - Python
+      - XLA
+    url: https://github.com/MadElf1337/jax-gpt2
+    featured: false
+  - title: Cohort Intelligence Optimizer
+    eyebrow: Numerical optimization
+    description: >-
+      A Python implementation of the Cohort Intelligence optimization
+      algorithm, adapted from MATLAB and accelerated with vectorized
+      NumPy operations.
+    stack:
+      - Python
+      - NumPy
+      - MATLAB
+    url: https://github.com/MadElf1337/CI-Optimizer
+    featured: false
+experience:
+  - role: Software Development Engineer, Performance
+    company: AWS Annapurna ML
+    period: Nov 2025 – present
+    summary: >-
+      Build inference and rollout infrastructure on AWS accelerators to
+      support post-training and reinforcement-learning workflows. Work
+      also spans FP8 KV-cache quantization, custom kernel integration,
+      compiler support for complex-valued JAX workloads, and Neuron SDK
+      release delivery.
+  - role: Software Development Engineer
+    company: Amazon
+    period: Jun 2025 – Nov 2025
+    summary: >-
+      Built an agent-based system combining query generation, data retrieval,
+      and reasoning to investigate financial reconciliation discrepancies
+      and automate operational workflows.
+  - role: Data Science Intern, AI Research
+    company: pSemi Corporation
+    period: Jun 2024 – Aug 2024
+    summary: >-
+      Built graph-based retrieval and distributed language-model serving
+      systems. Worked on knowledge-graph design, fine-tuning, quantization,
+      and datasets for more accurate Cypher query generation.
+education:
+  - degree: MS in Computer Science
+    school: University of Southern California
+    period: Aug 2023 – May 2025
+  - degree: Bachelor of Computer Engineering, Honours in Data Science
+    school: Savitribai Phule Pune University
+    period: Aug 2019 – Jul 2023
