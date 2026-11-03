@@ -1,0 +1,131 @@
+---
+layout: site
+description: "Pranav Kulkarni is an ML systems engineer working on accelerator inference, post-training systems, kernels, and compilers at AWS Annapurna ML."
+redirect_from:
+  - /about/
+  - /about.html
+  - /projects/
+  - /portfolio/
+---
+{% assign profile = site.data.profile %}
+<div class="shell">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow hero-eyebrow"><span class="accent-dot" aria-hidden="true"></span>{{ profile.role }} <span class="eyebrow-divider">/</span> {{ profile.location }}</p>
+      <h1 id="hero-title">{{ profile.headline }}</h1>
+      <p class="hero-intro">{{ profile.intro }}</p>
+      <div class="hero-actions">
+        <a class="button button-solid" href="#work">Explore my work <span aria-hidden="true">↓</span></a>
+        <a class="text-link" href="{{ profile.github_url }}">Find me on GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <figure class="system-figure">
+      <div class="figure-topline"><span>THE SPACE I WORK IN</span><span aria-hidden="true">[ 01—03 ]</span></div>
+      <svg class="system-diagram" viewBox="0 0 390 430" role="img" aria-labelledby="diagram-title diagram-description">
+        <title id="diagram-title">From model to metal</title>
+        <desc id="diagram-description">A model graph flows through a compiler into a grid of accelerator compute units.</desc>
+        <defs>
+          <pattern id="dot-grid" width="16" height="16" patternUnits="userSpaceOnUse">
+            <circle cx="1" cy="1" r=".7" fill="#c9c4b9"/>
+          </pattern>
+          <marker id="arrow" markerWidth="7" markerHeight="7" refX="4" refY="3.5" orient="auto">
+            <path d="M0 0 4 3.5 0 7" fill="none" stroke="#a8422c" stroke-width="1"/>
+          </marker>
+        </defs>
+        <rect x="109" y="15" width="270" height="395" fill="url(#dot-grid)" opacity=".6"/>
+        <g fill="#66685e" font-family="ui-monospace, monospace" font-size="10" letter-spacing="1">
+          <text x="0" y="82">01 / MODEL</text>
+          <text x="0" y="215">02 / COMPILE</text>
+          <text x="0" y="354">03 / COMPUTE</text>
+        </g>
+        <g stroke="#817e75" stroke-width="1.2" fill="none">
+          <path d="M157 50 230 35 311 66M157 50 220 91 311 66M157 112 220 91 297 127M230 35 220 91M311 66 297 127"/>
+        </g>
+        <g fill="#f5f2eb" stroke="#282a25" stroke-width="1.5">
+          <circle cx="157" cy="50" r="8"/>
+          <circle cx="230" cy="35" r="8"/>
+          <circle cx="311" cy="66" r="8"/>
+          <circle cx="157" cy="112" r="8"/>
+          <circle cx="297" cy="127" r="8"/>
+        </g>
+        <circle cx="220" cy="91" r="11" fill="#b64a32"/>
+        <path d="M228 135v36" fill="none" stroke="#a8422c" stroke-width="1.3" marker-end="url(#arrow)"/>
+        <rect x="137" y="188" width="182" height="52" fill="#ebe6db" stroke="#918c80"/>
+        <path d="m173 205-10 9 10 9m110-18 10 9-10 9" stroke="#a8422c" stroke-width="1.7" fill="none"/>
+        <path d="M191 208h48m-48 6h66m-66 6h35" stroke="#65685c" stroke-width="2"/>
+        <path d="M228 253v36" fill="none" stroke="#a8422c" stroke-width="1.3" marker-end="url(#arrow)"/>
+        <path d="m137 327 88-36 94 36v49l-91 38-91-38z" fill="#e7e2d7" stroke="#817e75"/>
+        <path d="m137 327 91 37 91-37m-91 37v50" fill="none" stroke="#817e75"/>
+        <g transform="matrix(1 .4 -1 .4 226 302)" stroke="#817e75" stroke-width="1.2">
+          {% for row in (0..3) %}{% for column in (0..3) %}
+          <rect x="{{ column | times: 20 }}" y="{{ row | times: 20 }}" width="16" height="16" fill="{% if row == column %}#b64a32{% else %}#f5f2eb{% endif %}"/>
+          {% endfor %}{% endfor %}
+        </g>
+      </svg>
+      <figcaption><span>From model to metal.</span><span class="figure-cross" aria-hidden="true">+</span></figcaption>
+    </figure>
+  </section>
+
+  <div class="practice-strip" aria-label="Areas of practice">
+    <span class="eyebrow">Across the stack</span>
+    <p>{% for area in profile.focus %}{{ area.title | escape }}{% unless forloop.last %}<span aria-hidden="true">/</span>{% endunless %}{% endfor %}</p>
+  </div>
+
+  <section class="section work-section" id="work" aria-labelledby="work-title">
+    <div class="section-heading">
+      <div><p class="eyebrow">Selected work</p><h2 id="work-title">Ideas, put to work.</h2></div>
+      <p class="section-intro">Personal projects and experiments in making machine learning more efficient.</p>
+    </div>
+    <div class="project-list">
+      {% for project in profile.projects %}
+      <article class="project">
+        <span class="project-number" aria-hidden="true">0{{ forloop.index }}</span>
+        <div class="project-title-group">
+          <p class="eyebrow">{{ project.eyebrow }}</p>
+          <h3><a href="{{ project.url }}">{{ project.title }}<span class="project-title-arrow" aria-hidden="true">↗</span></a></h3>
+          <ul class="stack" aria-label="Technologies">{% for technology in project.stack %}<li>{{ technology }}</li>{% endfor %}</ul>
+        </div>
+        <p class="project-description">{{ project.description }}</p>
+      </article>
+      {% endfor %}
+    </div>
+    <a class="text-link work-more" href="{{ profile.github_url }}?tab=repositories">More on GitHub <span aria-hidden="true">↗</span></a>
+  </section>
+
+  <section class="section experience-section" id="experience" aria-labelledby="experience-title">
+    <div class="section-heading">
+      <div><p class="eyebrow">Experience</p><h2 id="experience-title">Building, learning,<br>going deeper.</h2></div>
+      <a class="text-link" href="{{ '/resume/' | relative_url }}">View full résumé <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="experience-list">
+      {% for job in profile.experience %}
+      <article class="experience">
+        <p class="experience-period">{{ job.period }}</p>
+        <div class="experience-body">
+          <h3>{{ job.company }}</h3>
+          <p class="experience-role">{{ job.role }}</p>
+          <p class="experience-summary">{{ job.summary }}</p>
+        </div>
+        <span class="experience-mark" aria-hidden="true">{% if forloop.first %}↗{% else %}—{% endif %}</span>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section about-section" id="about" aria-labelledby="about-title">
+    <div class="about-heading">
+      <p class="eyebrow">A little about me</p>
+      <h2 id="about-title">Curious about<br>what’s underneath.</h2>
+      <div class="about-mark" aria-hidden="true"><span>pk.</span><span>ENGINEER<br>ALWAYS LEARNING</span></div>
+    </div>
+    <div class="about-copy">
+      {% for paragraph in profile.about %}<p>{{ paragraph }}</p>{% endfor %}
+      <div class="education">
+        <p class="eyebrow">Education</p>
+        {% for school in profile.education %}
+        <div class="education-entry"><h3>{{ school.school }}</h3><p>{{ school.degree }}</p><p class="education-period">{{ school.period }}</p></div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
